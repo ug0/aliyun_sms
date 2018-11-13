@@ -13,13 +13,13 @@ defmodule Aliyun.Sms do
 
       Aliyun.Sms.send("1500000000", "sign", "template", %{code: "222333"})
       {:ok, %{"Code" => "OK", "Message" => "OK", ...}}
-      {:error, %HTTPoison.Error{...}}
-      {:error, %Jason.DecodeError{...}}
       {:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+      {:error, :http_error, reason}
+      {:error, :json_decode_error, body}
 
   """
-  @spec send(binary() | [binary()], binary(), binary(), map(), any(), any()) ::
-          {:error, any()} | {:ok, map()} | {:error, any(), map()}
+  @spec send(binary() | [any()], any(), any(), map(), any(), any()) ::
+          {:ok, map()} | {:error, any(), any()}
   def send(
         phones,
         sign_name,
@@ -54,7 +54,7 @@ defmodule Aliyun.Sms do
         parse_response(body)
 
       {:error, %HTTPoison.Error{reason: reason}} ->
-        {:error, reason}
+        {:error, :http_error, reason}
     end
   end
 
@@ -62,7 +62,7 @@ defmodule Aliyun.Sms do
     case Jason.decode(res_body) do
       {:ok, data = %{"Code" => "OK"}} -> {:ok, data}
       {:ok, data = %{"Code" => err_code}} -> {:error, err_code, data}
-      {:error, error = %Jason.DecodeError{}} -> {:error, error}
+      {:error, %Jason.DecodeError{}} -> {:error, :json_decode_error, res_body}
     end
   end
 
