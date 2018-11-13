@@ -1,5 +1,7 @@
 # AliyunSms
 
+![Hex.pm](https://img.shields.io/hexpm/v/aliyun_sms.svg)
+
 Aliyun SMS API(阿里云短信服务 API)
 
 ## Installation
