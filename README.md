@@ -28,10 +28,10 @@ config :aliyun_sms,
 
 ```elixir
 Aliyun.Sms.send("1500000000", "sign", "template", %{code: "222333"})
-# {:ok, %{"Code" => "OK", "Message" => "OK", ...}}
-# {:error, %HTTPoison.Error{...}}
-# {:error, %Jason.DecodeError{...}}
-# {:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+#{:ok, %{"Code" => "OK", "Message" => "OK", ...}}
+#{:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+#{:error, :http_error, reason}
+#{:error, :json_decode_error, body}
 ```
 
 
