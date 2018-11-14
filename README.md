@@ -12,7 +12,7 @@ by adding `aliyun_sms` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:aliyun_sms, "~> 0.1.1"}
+    {:aliyun_sms, "~> 0.2.0"}
   ]
 end
 ```
@@ -27,7 +27,7 @@ config :aliyun_sms,
 ## Usage
 
 ```elixir
-Aliyun.Sms.send("1500000000", "sign", "template", %{code: "222333"})
+Aliyun.Sms.send_sms("1500000000", "sign", "template", %{code: "222333"})
 #{:ok, %{"Code" => "OK", "Message" => "OK", ...}}
 #{:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
 #{:error, :http_error, reason}
