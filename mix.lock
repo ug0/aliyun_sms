@@ -1,5 +1,5 @@
 %{
-  "aliyun_util": {:hex, :aliyun_util, "0.3.0", "61defa7ef9b8f36569fd6364fc979d2d6bf620d00c5192012365c064a6fb12d3", [:mix], [{:timex, "~> 3.1", [hex: :timex, repo: "hexpm", optional: false]}], "hexpm"},
+  "aliyun_util": {:hex, :aliyun_util, "0.3.1", "d7eba37804e8e61f94db222c63ba283fd3e8022b98c3a8f953f07f4795174d03", [:mix], [{:timex, "~> 3.1", [hex: :timex, repo: "hexpm", optional: false]}], "hexpm"},
   "certifi": {:hex, :certifi, "2.4.2", "75424ff0f3baaccfd34b1214184b6ef616d89e420b258bb0a5ea7d7bc628f7f0", [:rebar3], [{:parse_trans, "~>3.3", [hex: :parse_trans, repo: "hexpm", optional: false]}], "hexpm"},
   "combine": {:hex, :combine, "0.10.0", "eff8224eeb56498a2af13011d142c5e7997a80c8f5b97c499f84c841032e429f", [:mix], [], "hexpm"},
   "earmark": {:hex, :earmark, "1.2.6", "b6da42b3831458d3ecc57314dff3051b080b9b2be88c2e5aa41cd642a5b044ed", [:mix], [], "hexpm"},
