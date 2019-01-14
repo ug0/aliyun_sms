@@ -1,15 +1,19 @@
 defmodule Aliyun.Sms do
-  @moduledoc false
-
   @doc """
   发送短信.
 
   ## Examples
 
-      Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
       {:ok, %{"Code" => "OK", "Message" => "OK", ...}}
+
+      iex> Aliyun.Sms.send("1500000000", "invalid_sig", "SMS_0000", %{code: "222333"})
       {:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+
+      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
       {:error, :http_error, reason}
+
+      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
       {:error, :json_decode_error, body}
 
   """
