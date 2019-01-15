@@ -4,17 +4,17 @@ defmodule Aliyun.Sms do
 
   ## Examples
 
-      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
-      {:ok, %{"Code" => "OK", "Message" => "OK", ...}}
+      iex> Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+      {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
 
-      iex> Aliyun.Sms.send("1500000000", "invalid_sig", "SMS_0000", %{code: "222333"})
-      {:error, code, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+      iex> Aliyun.Sms.send_sms("1500000000", "invalid_sig", "SMS_0000", %{code: "222333"})
+      {:error, "isv.SMS_SIGNATURE_ILLEGAL", %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
 
-      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
-      {:error, :http_error, reason}
+      iex> Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+      {:error, :http_error, "REASON"}
 
-      iex> Aliyun.Sms.send("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
-      {:error, :json_decode_error, body}
+      iex> Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+      {:error, :json_decode_error, "BODY"}
 
   """
   @type error_code() :: :http_error | :json_decode_error | String.t()
