@@ -1,6 +1,6 @@
 # AliyunSms
 
-[![Build Status](https://semaphoreci.com/api/v1/ug0/aliyun_sms/branches/master/shields_badge.svg)](https://semaphoreci.com/ug0/aliyun_sms)
+[![Build Status](https://travis-ci.org/ug0/aliyun_sms.svg?branch=master)](https://travis-ci.org/ug0/aliyun_sms)
 [![Hex.pm](https://img.shields.io/hexpm/v/aliyun_sms.svg)](https://hex.pm/packages/aliyun_sms)
 
 Aliyun SMS API(阿里云短信服务 API)
