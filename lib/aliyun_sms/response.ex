@@ -19,8 +19,8 @@ defmodule Aliyun.Sms.Response do
           | {:error, error_code(), String.t()}
   def parse(data) do
     case Jason.decode(data) do
-      {:ok, parsed_data = %{"Code" => "OK"}} -> {:ok, parsed_data}
-      {:ok, %{"Code" => err_code}} -> {:error, err_code, data}
+      {:ok, %{"Code" => "OK"} = parsed_data} -> {:ok, parsed_data}
+      {:ok, %{"Code" => err_code} = parsed_data} -> {:error, err_code, parsed_data}
       {:error, %Jason.DecodeError{}} -> {:error, :json_decode_error, data}
     end
   end
