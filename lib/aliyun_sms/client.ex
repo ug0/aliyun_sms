@@ -20,9 +20,9 @@ defmodule Aliyun.Sms.Client do
       {:error, :json_decode_error, "BODY"}
 
   """
-  @type error_code() :: :http_error | :json_decode_error | String.t()
+  @type error_code() :: :http_error | :json_decode_error
   @spec send_sms(String.t(), String.t(), String.t(), map(), String.t() | nil, String.t() | nil) ::
-          {:ok, map()} | {:error, error_code(), String.t()}
+          {:ok, map()} | {:error, String.t(), map()} | {:error, error_code(), String.t()}
 
   def send_sms(phones, sign_name, template, template_params = %{}, up_extend_code \\ nil, out_id \\ nil) do
     %{
