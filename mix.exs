@@ -4,12 +4,13 @@ defmodule AliyunSms.MixProject do
   def project do
     [
       app: :aliyun_sms,
-      version: "0.2.4",
+      version: "0.2.5",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
-      package: package()
+      package: package(),
+      docs: docs()
     ]
   end
 
@@ -44,6 +45,13 @@ defmodule AliyunSms.MixProject do
       links: %{"GitHub" => "https://github.com/ug0/aliyun_sms"},
       source_urL: "https://github.com/ug0/aliyun_sms",
       homapage_url: "https://github.com/ug0/aliyun_sms"
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extras: ["README.md"],
     ]
   end
 end

@@ -13,7 +13,7 @@ by adding `aliyun_sms` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:aliyun_sms, "~> 0.2.4"}
+    {:aliyun_sms, "~> 0.2.5"}
   ]
 end
 ```
@@ -42,7 +42,5 @@ Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{c
 ```
 
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/aliyun_sms](https://hexdocs.pm/aliyun_sms).
-
+## Documentation
+[https://hexdocs.pm/aliyun_sms](https://hexdocs.pm/aliyun_sms)
