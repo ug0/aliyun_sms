@@ -25,7 +25,8 @@ config :aliyun_sms,
   access_key_secret: "ALIYUN_ACCESS_KEY_SECRET"
 ```
 
-## Usage
+
+## Quickstart
 
 ```elixir
 Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
@@ -41,6 +42,13 @@ Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{c
 # {:error, :json_decode_error, "BODY"}
 ```
 
-
 ## Documentation
-[https://hexdocs.pm/aliyun_sms](https://hexdocs.pm/aliyun_sms)
+- [https://hexdocs.pm/aliyun_sms](https://hexdocs.pm/aliyun_sms)
+
+- [阿里云官方文档](https://help.aliyun.com/document_detail/102715.html?spm=a2c4g.11186623.2.9.64da5f30jYcBMx#concept-t4w-pcs-ggb)
+
+| Aliyun | Description | This package |
+| ---------- | ----------- | --------------- |
+| SendSMS    | 发送短信。    | `Aliyun.Sms.send_sms/6` |
+| SendBatchSms | 批量发送短信。| [TODO] |
+| QuerySendDetails | 查询短信发送的状态。 | [TODO] |
