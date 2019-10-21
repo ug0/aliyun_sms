@@ -51,10 +51,10 @@ defmodule Aliyun.Sms.Request do
   end
 
   defp access_key_id do
-    Application.get_env(:aliyun_sms, :access_key_id)
+    Confex.get_env(:aliyun_sms, :access_key_id)
   end
 
   defp access_key_secret do
-    Application.get_env(:aliyun_sms, :access_key_secret)
+    Confex.get_env(:aliyun_sms, :access_key_secret)
   end
 end
