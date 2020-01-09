@@ -58,3 +58,11 @@ Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{c
 | SendSMS    | 发送短信。    | `Aliyun.Sms.send_sms/6` |
 | SendBatchSms | 批量发送短信。| [TODO] |
 | QuerySendDetails | 查询短信发送的状态。 | [TODO] |
+| AddSmsSign | 调用短信AddSmsSign申请短信签名。 | [TODO] |
+| DeleteSmsSign | 调用接口DeleteSmsSign删除短信签名。 | [TODO] |
+| QuerySmsSign | 调用接口QuerySmsSign查询短信签名申请状态。 | [TODO] |
+| ModifySmsSign | 调用接口ModifySmsSign修改未审核通过的短信签名，并重新提交审核。 | [TODO] |
+| ModifySmsTemplate |	调用接口ModifySmsTemplate修改未通过审核的短信模板。 | [TODO] |
+| QuerySmsTemplate |	调用接口QuerySmsTemplate查询短信模板的审核状态。 | [TODO] |
+| AddSmsTemplate |	调用接口AddSmsTemplate申请短信模板。 | [TODO] |
+| DeleteSmsTemplate |	调用接口DeleteSmsTemplate删除短信模板。 | [TODO] |
