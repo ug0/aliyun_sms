@@ -5,7 +5,7 @@ defmodule AliyunSms.MixProject do
     [
       app: :aliyun_sms,
       version: "0.2.8",
-      elixir: "~> 1.7",
+      elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
