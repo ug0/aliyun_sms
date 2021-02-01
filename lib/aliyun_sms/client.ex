@@ -27,8 +27,15 @@ defmodule Aliyun.Sms.Client do
 
   """
   @type error_code() :: :http_error | :json_decode_error
-  @spec send_sms(String.t() | [String.t()], String.t(), String.t(), map(), String.t() | nil, String.t() | nil) ::
-          {:ok, map()} | {:error, String.t(), map()} | {:error, error_code(), String.t()}
+
+  @spec send_sms(
+          String.t() | [String.t()],
+          String.t(),
+          String.t(),
+          map(),
+          String.t() | nil,
+          String.t() | nil
+        ) :: {:ok, map()} | {:error, String.t(), map()} | {:error, error_code(), String.t()}
 
   def send_sms(phones, sign_name, template, template_params, up_extend_code \\ nil, out_id \\ nil)
 
@@ -46,6 +53,32 @@ defmodule Aliyun.Sms.Client do
       "TemplateParam" => Jason.encode!(template_params),
       "SmsUpExtendCode" => up_extend_code,
       "OutId" => out_id
+    }
+    |> Request.build_query()
+    |> request()
+  end
+
+  @spec send_batch_sms(
+          String.t(),
+          [String.t()],
+          [String.t()],
+          [map()],
+          [String.t()] | nil
+        ) :: {:ok, map()} | {:error, String.t(), map()} | {:error, error_code(), String.t()}
+  def send_batch_sms(
+        template,
+        phones = [_ | _],
+        sign_names = [_ | _],
+        template_params = [_ | _],
+        extend_codes \\ nil
+      ) do
+    %{
+      "Action" => "SendBatchSms",
+      "PhoneNumberJson" => Jason.encode!(phones),
+      "SignNameJson" => Jason.encode!(sign_names),
+      "TemplateCode" => template,
+      "TemplateParamJson" => Jason.encode!(template_params),
+      "SmsUpExtendCodeJson" => extend_codes && Jason.encode!(extend_codes)
     }
     |> Request.build_query()
     |> request()
