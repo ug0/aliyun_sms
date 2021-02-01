@@ -38,6 +38,12 @@ config :aliyun_oss,
 Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
 # {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
 
+Aliyun.Sms.Client.send_sms("1500000000,1500000001", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+# {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
+
+Aliyun.Sms.Client.send_sms(["1500000000", "1500000001"], "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
+# {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
+
 Aliyun.Sms.send_sms("1500000000", "invalid_sig", "SMS_0000", %{code: "222333"})
 # {:error, "isv.SMS_SIGNATURE_ILLEGAL", %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
 
