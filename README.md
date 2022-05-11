@@ -26,7 +26,7 @@ config :aliyun_sms,
 ```
 Or if you want to config them via run-time system environment variables:
 ```elixir
-config :aliyun_oss,
+config :aliyun_sms,
   access_key_id: {:system, "ALIYUN_ACCESS_KEY_ID"},
   access_key_secret: {:system, "ALIYUN_ACCESS_KEY_SECRET"}
 ```
