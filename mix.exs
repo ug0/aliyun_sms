@@ -26,7 +26,7 @@ defmodule AliyunSms.MixProject do
     [
       {:jason, "~> 1.1"},
       {:aliyun_util, "~> 0.3.3"},
-      {:httpoison, "~> 1.4"},
+      {:httpoison, "~> 2.1"},
       {:confex, "~> 3.4"},
       {:ex_doc, "~> 0.20", only: :dev},
       # {:dep_from_hexpm, "~> 0.3.0"},
