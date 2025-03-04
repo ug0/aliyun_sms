@@ -1,7 +1,12 @@
 # AliyunSms
 
-[![Build Status](https://travis-ci.org/ug0/aliyun_sms.svg?branch=master)](https://travis-ci.org/ug0/aliyun_sms)
-[![Hex.pm](https://img.shields.io/hexpm/v/aliyun_sms.svg)](https://hex.pm/packages/aliyun_sms)
+[![Run Tests](https://github.com/ug0/aliyun_sms/actions/workflows/test.yml/badge.svg)](https://github.com/ug0/aliyun_sms/actions/workflows/test.yml)
+[![Publish](https://github.com/ug0/aliyun_sms/actions/workflows/publish.yml/badge.svg)](https://github.com/ug0/aliyun_sms/actions/workflows/publish.yml)
+[![Module Version](https://img.shields.io/hexpm/v/aliyun_sms.svg)](https://hex.pm/packages/aliyun_sms)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/aliyun_sms/)
+[![Total Download](https://img.shields.io/hexpm/dt/aliyun_sms.svg)](https://hex.pm/packages/aliyun_sms)
+[![License](https://img.shields.io/hexpm/l/aliyun_sms.svg)](https://github.com/ug0/aliyun_sms/blob/master/LICENSE.md)
+[![Last Updated](https://img.shields.io/github/last-commit/ug0/aliyun_sms.svg)](https://github.com/ug0/aliyun_sms/commits/master)
 
 Aliyun SMS API(阿里云短信服务 API)
 
@@ -13,7 +18,7 @@ by adding `aliyun_sms` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:aliyun_sms, "~> 0.2.8"}
+    {:aliyun_sms, "~> 0.3.0"}
   ]
 end
 ```
@@ -39,13 +44,10 @@ Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{c
 # {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
 
 Aliyun.Sms.send_sms("1500000000", "invalid_sig", "SMS_0000", %{code: "222333"})
-# {:error, "isv.SMS_SIGNATURE_ILLEGAL", %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
+# {:error, %{"Code" => "isv.SMS_SIGNATURE_ILLEGAL", "Message" => "短信签名不合法"}}
 
 Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
-# {:error, :http_error, "REASON"}
-
-Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
-# {:error, :json_decode_error, "BODY"}
+# {:error, %Req.TransportError{reason: :ehostunreach}}
 ```
 
 ## Documentation
