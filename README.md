@@ -11,9 +11,9 @@
 Aliyun SMS API(阿里云短信服务 API)
 
 ## Installation
+Add `:aliyun_sms` to the list of dependencies in `mix.exs`:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `aliyun_sms` to your list of dependencies in `mix.exs`:
+> **NOTE:** v0.3.x requires Elixir version greater than v1.18
 
 ```elixir
 def deps do
