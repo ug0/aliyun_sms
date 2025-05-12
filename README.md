@@ -40,6 +40,9 @@ config :aliyun_sms,
 ## Quickstart
 
 ```elixir
+Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", ~s[{"code":"222333"}])
+# {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
+
 Aliyun.Sms.send_sms("1500000000", "阿里云短信测试专用", "SMS_0000", %{code: "222333"})
 # {:ok, %{"Code" => "OK", "Message" => "OK", "BizId" => "700000000000000000^0", "RequestId" => "A0000000-3CC1-4000-8000-E00000000000"}}
 
