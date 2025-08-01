@@ -27,7 +27,7 @@ defmodule Aliyun.Sms.Client do
   def send_sms(phones, sign_name, template, template_params, up_extend_code \\ nil, out_id \\ nil)
 
   def send_sms(phones, sign_name, template, template_params = %{}, up_extend_code, out_id) do
-    send_sms(phones, sign_name, template, JSON.encode!(template_params), up_extend_code, out_id)
+    send_sms(phones, sign_name, template, Jason.encode!(template_params), up_extend_code, out_id)
   end
 
   def send_sms(phones, sign_name, template, template_params, up_extend_code, out_id) do
