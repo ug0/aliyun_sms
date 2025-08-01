@@ -41,29 +41,21 @@ defmodule Aliyun.Sms.Client do
     })
   end
 
-  @headers %{
-    "x-acs-action" => "SendSms",
-    "x-acs-version" => "2017-05-25"
-  }
   @url "https://dysmsapi.aliyuncs.com/"
   defp request(query_params) do
-    config =
-      Aliyun.Util.Config.new!(%{
-        access_key_id: access_key_id(),
-        access_key_secret: access_key_secret()
-      })
+    headers = Aliyun.Util.Header.build_action_headers("SendSms", "2017-05-25")
 
-    headers =
-      Map.merge(@headers, %{
-        "x-acs-date" => Aliyun.Util.Time.gmt_now_iso8601(),
-        "x-acs-signature-nonce" =>
-          :crypto.strong_rand_bytes(16) |> Base.encode16() |> String.downcase()
-      })
-
-    config
+    config()
     |> Aliyun.Util.Request.build!(:post, @url, query_params, headers, "")
     |> Aliyun.Util.Request.request()
     |> parse_response()
+  end
+
+  defp config do
+    Aliyun.Util.Config.new!(%{
+      access_key_id: access_key_id(),
+      access_key_secret: access_key_secret()
+    })
   end
 
   defp parse_response({:ok, %{body: %{"Code" => "OK"} = body}}) do

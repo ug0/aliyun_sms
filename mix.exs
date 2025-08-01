@@ -4,7 +4,7 @@ defmodule Aliyun.Sms.MixProject do
   def project do
     [
       app: :aliyun_sms,
-      version: "0.3.1",
+      version: "0.3.2",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -24,7 +24,7 @@ defmodule Aliyun.Sms.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:aliyun_util, "~> 0.4.0"},
+      {:aliyun_util, "~> 0.4.2"},
       {:confex, "~> 3.4"},
       {:ex_doc, "~> 0.20", only: :dev},
       # {:dep_from_hexpm, "~> 0.3.0"},

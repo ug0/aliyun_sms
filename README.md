@@ -18,7 +18,7 @@ Add `:aliyun_sms` to the list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:aliyun_sms, "~> 0.3.0"}
+    {:aliyun_sms, "~> 0.3.2"}
   ]
 end
 ```
